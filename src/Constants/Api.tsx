@@ -1,1 +1,1 @@
-export const  userAPI='http://localhost:5000'
+export const  userAPI='http://3.82.18.185'
