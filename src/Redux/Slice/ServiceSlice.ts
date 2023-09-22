@@ -57,7 +57,7 @@ export const getNerestService = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const datas = await userInstance.get(
-        API_URL.NEAREST_SERVICE,
+        'http://54.161.139.49/nerest-services',
         setHeaders()
       );
       return datas.data;
