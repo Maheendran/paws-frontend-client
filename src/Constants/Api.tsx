@@ -1,1 +1,1 @@
-export const  userAPI='https://54.161.139.49'
+export const  userAPI='https://www.furnica.shop'
