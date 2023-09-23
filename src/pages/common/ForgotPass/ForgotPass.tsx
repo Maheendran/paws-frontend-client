@@ -43,6 +43,7 @@ const ForgotPass = () => {
       // if (data.payload.status === "Error") {
       //   return showBoundary(data.payload);
       // }
+     
       if (data.payload.status === "success") {
         navigate("/register");
       } else {

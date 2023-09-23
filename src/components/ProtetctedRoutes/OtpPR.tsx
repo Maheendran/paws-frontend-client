@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Redux/Store";
 import { currentUserDetail } from "../../Redux/Slice/AuthSlice";
+import { Error } from "../error/Error";
 import { ErrorBoundary } from "react-error-boundary";
 
-import { Error } from "../error/Error";
 const OtpPR = (props: any) => {
   const { Component } = props;
   const navigate = useNavigate();
@@ -31,12 +31,11 @@ const OtpPR = (props: any) => {
   return (
     <>
        <ErrorBoundary  FallbackComponent={Error} >
-
-     
        <Component />
        </ErrorBoundary>
 
-   
+        
+  
     </>
   );
 };

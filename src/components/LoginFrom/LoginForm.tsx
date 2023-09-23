@@ -60,6 +60,7 @@ const LoginForm: React.FC<ChildProps> = ({ handleToggle }) => {
 
   // =======================================//
 const {showBoundary}=useErrorBoundary()
+
   const handleSubmited = (data: formdata) => {
     const cleanedString = choosePerson.replace(/^"(.*)"$/, "$1");
     data.accountType = cleanedString;
@@ -108,17 +109,18 @@ const {showBoundary}=useErrorBoundary()
   const [tempemail, setTempemail] = useState("");
 
   const handleforgotPass = () => {
+
     localStorage.setItem("email", tempemail);
     const values = {
       email: tempemail,
       accountType: choosePerson,
     };
-
     dispatch(forgotpasswordOtp(values)).then((data) => {
+      console.log(data.payload,'dataaaaa')
       if (data.payload.status === "Error") {
         return showBoundary(data.payload);
       }
-      console.log(data.payload, "data.payload");
+     
       if (data.payload.status === "success") {
         setShowmodal(!showmodal);
         navigate("/otp");
