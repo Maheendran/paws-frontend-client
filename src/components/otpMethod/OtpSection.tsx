@@ -43,6 +43,7 @@ const OtpSection: React.FC<{ email: string }> = ({ email }) => {
   const [avilabe, setAvilable] = useState(true);
 
   const [remainingTime, setRemainingTime] = useState("00");
+  
   useEffect(() => {
     const intervalId = setInterval(() => {
       const currentTime = Date.now();
