@@ -31,7 +31,7 @@ const AllRoutes = () => {
   
         <Route path="/choose-profile" element={<PrivateOtproute Component={ChooseProfile} />}/>
         <Route path="/register" element={<PrivateOtproute Component={Registration} />}/>
-        <Route path="/reset-password" element={<ForgotPass />} />
+        <Route path="/reset-password" element={    <ForgotPass />} />
         <Route path="/otp" element={<OtpPR Component={OtpPage} />} />
 
  

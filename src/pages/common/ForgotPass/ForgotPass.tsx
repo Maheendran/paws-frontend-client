@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../Redux/Store";
 import { resetPassword } from "../../../Redux/Slice/AuthSlice";
 import { toast } from "react-hot-toast";
-import { useErrorBoundary } from "react-error-boundary";
+// import { useErrorBoundary } from "react-error-boundary";
+
 const ForgotPass = () => {
   const schema = Joi.object({
     password: Joi.string().min(4).max(15).required().label("password"),
@@ -29,7 +30,7 @@ const ForgotPass = () => {
     formState: { errors },
   } = useForm<formdata>({ resolver: joiResolver(schema) });
   const navigate = useNavigate();
-  const {showBoundary}=useErrorBoundary()
+  // const {showBoundary}=useErrorBoundary()
   const { _id, choosePerson } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const handleSubmited = (data: formdata) => {
@@ -39,9 +40,9 @@ const ForgotPass = () => {
       accountType: choosePerson,
     };
     dispatch(resetPassword(resetValues)).then((data) => {
-      if (data.payload.status === "Error") {
-        return showBoundary(data.payload);
-      }
+      // if (data.payload.status === "Error") {
+      //   return showBoundary(data.payload);
+      // }
       if (data.payload.status === "success") {
         navigate("/register");
       } else {
@@ -52,6 +53,8 @@ const ForgotPass = () => {
 
   return (
     <>
+
+
       <div className="logo">
         <img src="../assests/logo.png" alt="" />
       </div>
