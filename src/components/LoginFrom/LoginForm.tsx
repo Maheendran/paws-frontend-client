@@ -116,7 +116,7 @@ const {showBoundary}=useErrorBoundary()
       accountType: choosePerson,
     };
     dispatch(forgotpasswordOtp(values)).then((data) => {
-      console.log(data.payload,'dataaaaa')
+
       if (data.payload.status === "Error") {
         return showBoundary(data.payload);
       }
