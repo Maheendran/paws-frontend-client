@@ -7,7 +7,7 @@ export const Error=(props:FallbackProps)=>{
     return(
         <div className="container">
                  <div className="row m-auto mt-5">
-                  <h1>{error.message}</h1>
+                
                    <div className="col-9 error_img m-auto">
                      <img className="img-fluid" src="./assests/error404.gif" alt="" />
                    </div>
