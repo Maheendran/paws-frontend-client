@@ -121,13 +121,9 @@ dispatch(getcurrentUser()).then((data) => {
 });    
   },[]);
 
-
-  const errorHandler=(error:any,errorInfo:any)=>{
-console.log(error,errorInfo)
-  }
   return (
   
-    <ErrorBoundary  FallbackComponent={Error} onError={errorHandler}>
+    <ErrorBoundary  FallbackComponent={Error} >
       <div>
         {user.userloading ? (
           <LoadingComp />

@@ -66,6 +66,8 @@ useEffect(() => {
   return (
     <div>
        <ErrorBoundary  FallbackComponent={Error} >
+
+        
         {user.currentUser.accountType==='Clinic' ? <ClinicNav/> : 
 <NavbarPet  authorized={authorized}/>
 }
